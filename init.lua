@@ -133,6 +133,7 @@ require('lazy').setup({
     { 'nvim-mini/mini.nvim' },
     { 'folke/tokyonight.nvim', priority = 1000 },
     { 'neovim/nvim-lspconfig' },
+    { 'romus204/tree-sitter-manager.nvim' },
     { 'mason-org/mason.nvim' },
     { 'mason-org/mason-lspconfig.nvim' },
     { 'stevearc/conform.nvim' },

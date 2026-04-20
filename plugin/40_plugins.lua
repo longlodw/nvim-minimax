@@ -14,7 +14,7 @@ local now_if_args, later = Config.now_if_args, Config.later
 -- Semantic tokens =============================================================
 
 -- Prefer semantic syntax highlighting from attached language servers.
--- This setup intentionally avoids tree-sitter as a highlighting dependency.
+-- Tree-sitter highlighting is managed separately via 'tree-sitter-manager.nvim'.
 --
 -- Troubleshooting:
 -- - Run `:checkhealth vim.lsp` to verify LSP is configured correctly.
@@ -24,6 +24,18 @@ now_if_args(function()
     vim.lsp.semantic_tokens.enable(true, { bufnr = ev.buf })
   end
   Config.new_autocmd('LspAttach', nil, enable_semantic_tokens, 'Enable semantic tokens')
+end)
+
+-- Tree-sitter parser management ===============================================
+
+-- Manage Tree-sitter parsers with 'romus204/tree-sitter-manager.nvim'.
+-- Use `:TSManager` to install/update/remove parsers.
+later(function()
+  require('tree-sitter-manager').setup({
+    ensure_installed = { 'lua', 'vim', 'vimdoc', 'markdown' },
+    auto_install = true,
+    highlight = true,
+  })
 end)
 
 -- Language servers ===========================================================

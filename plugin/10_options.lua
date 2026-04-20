@@ -34,19 +34,6 @@ vim.o.shada = "'100,<50,s10,:1000,/100,@100,h" -- Limit ShaDa file (for startup)
 vim.cmd('filetype plugin indent on')
 if vim.fn.exists('syntax_on') ~= 1 then vim.cmd('syntax enable') end
 
--- Toggle Tree-sitter globally. Set to `true` before startup to keep it enabled.
-vim.g.minimax_enable_treesitter = vim.g.minimax_enable_treesitter or false
-if not vim.g.minimax_enable_treesitter then
-  local disable_treesitter = function(ev)
-    local buf = ev.buf
-    pcall(vim.treesitter.stop, buf)
-    vim.schedule(function()
-      if vim.api.nvim_buf_is_valid(buf) then pcall(vim.treesitter.stop, buf) end
-    end)
-  end
-  Config.new_autocmd('FileType', nil, disable_treesitter, 'Disable Tree-sitter')
-end
-
 -- UI =========================================================================
 vim.o.breakindent    = true       -- Indent wrapped lines to match line start
 vim.o.breakindentopt = 'list:-1'  -- Add padding for lists (if 'wrap' is set)

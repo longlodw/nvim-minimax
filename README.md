@@ -7,7 +7,7 @@ Lean Neovim config focused on `mini.nvim`, with practical extras for LSP, format
 - `mini.nvim` as the core UX layer (statusline, pickers, snippets, surround, key clues, etc.).
 - LSP via `nvim-lspconfig` + `mason.nvim` + `mason-lspconfig.nvim`.
 - Semantic token highlighting from LSP (no custom `@lsp.type.*` relinking).
-- Tree-sitter disabled by default (set `vim.g.minimax_enable_treesitter = true` before startup to enable).
+- Tree-sitter parser management via `romus204/tree-sitter-manager.nvim`.
 - Formatting via `conform.nvim`.
 - Git workflow via `gitsigns.nvim` + `vim-fugitive`.
 - File explorer via `oil.nvim` (`<Leader>ee`).
@@ -18,6 +18,8 @@ Lean Neovim config focused on `mini.nvim`, with practical extras for LSP, format
 
 - Neovim 0.11+ recommended.
 - `git`.
+- `tree-sitter` CLI (for parser installation).
+- C compiler (`gcc`/`clang`) to build parsers.
 - `ripgrep` (used by file/grep pickers).
 - Clipboard provider for your platform:
   - Wayland: `wl-clipboard`
