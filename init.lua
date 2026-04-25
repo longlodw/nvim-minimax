@@ -137,7 +137,6 @@ require('lazy').setup({
     { 'mason-org/mason.nvim' },
     { 'mason-org/mason-lspconfig.nvim' },
     { 'stevearc/conform.nvim' },
-    { 'stevearc/oil.nvim' },
     { 'zbirenbaum/copilot.lua' },
     { 'lewis6991/gitsigns.nvim' },
     { 'tpope/vim-fugitive' },

@@ -1,6 +1,6 @@
 # nvim-minimax
 
-Lean Neovim config focused on `mini.nvim`, with practical extras for LSP, formatting, Git, Oil, and Copilot.
+Lean Neovim config focused on `mini.nvim`, with practical extras for LSP, formatting, Git, mini.files, and Copilot.
 
 ## What this config includes
 
@@ -10,7 +10,7 @@ Lean Neovim config focused on `mini.nvim`, with practical extras for LSP, format
 - Tree-sitter parser management via `romus204/tree-sitter-manager.nvim`.
 - Formatting via `conform.nvim`.
 - Git workflow via `gitsigns.nvim` + `vim-fugitive`.
-- File explorer via `oil.nvim` (`<Leader>ee`).
+- File explorer via `mini.files` (`<Leader>ee`).
 - GitHub Copilot via `copilot.lua` with inline suggestions enabled for all filetypes.
 - Clipboard integrated with the OS via `vim.o.clipboard = 'unnamedplus'`.
 
@@ -46,7 +46,7 @@ NVIM_APPNAME=nvim-minimax nvim --headless +qa
 - `plugin/10_options.lua`: Neovim options.
 - `plugin/20_keymaps.lua`: custom keymaps.
 - `plugin/30_mini.lua`: enabled `mini.nvim` modules.
-- `plugin/40_plugins.lua`: non-mini plugins (LSP, formatting, Git, Oil, Copilot).
+- `plugin/40_plugins.lua`: non-mini plugins (LSP, formatting, Git, Copilot).
 - `after/`: filetype/LSP/snippet overrides.
 - `snippets/`: user snippets.
 
@@ -55,7 +55,7 @@ NVIM_APPNAME=nvim-minimax nvim --headless +qa
 Leader is `<Space>`.
 
 - **Buffer**: `<Leader>ba` alternate, `<Leader>bd` delete, `<Leader>bw` wipeout.
-- **Explore/Edit**: `<Leader>ee` Oil explorer, `<Leader>ei` edit `init.lua`.
+- **Explore/Edit**: `<Leader>ee` mini.files explorer, `<Leader>ei` edit `init.lua`.
 - **Find**: `<Leader>ff` files, `<Leader>fg` live grep, `<Leader>fb` buffers, `<Leader>fr` resume picker.
 - **Git**: `<Leader>gd` diff, `<Leader>ga` staged diff, `<Leader>gs` line blame, visual `<Leader>gs` stage hunk.
 - **Language**: `<Leader>la` code actions, `<Leader>lr` rename, `<Leader>ld` diagnostic float, `<Leader>lf` format.

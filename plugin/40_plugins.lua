@@ -94,13 +94,8 @@ end)
 
 -- File explorer ===============================================================
 
--- 'stevearc/oil.nvim' provides an editable file explorer in a floating window
--- or split and can replace default netrw behavior.
-later(function()
-  require('oil').setup({
-    default_file_explorer = true,
-  })
-end)
+-- 'mini.files' provides an editable file explorer using column view.
+-- It is configured in 'plugin/30_mini.lua'.
 
 -- AI completion ===============================================================
 

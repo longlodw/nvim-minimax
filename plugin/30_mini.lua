@@ -504,6 +504,15 @@ later(function() require('mini.pick').setup({
   },
 }) end)
 
+-- File explorer with editable directory buffers in a column view.
+-- Example usage:
+-- - `<Leader>ee` - open explorer in current working directory.
+-- - Edit entries and press `=` to synchronize file system changes.
+-- - Default actions: `l` go in/open, `h` go out, `q` close, `g?` help.
+-- It needs to be set up during startup if Neovim is launched with paths
+-- (like `nvim .`) so it can act as default directory explorer.
+now_if_args(function() require('mini.files').setup() end)
+
 -- Manage and expand snippets (templates for a frequently used text).
 -- Typical workflow is to type snippet's (configurable) prefix and expand it
 -- into a snippet session.
